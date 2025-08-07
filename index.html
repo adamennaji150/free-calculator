@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calculatrice en ligne gratuite | Rapide et simple</title>
+
+  <meta name="description" content="Calculatrice simple, rapide et gratuite pour effectuer des opérations mathématiques en ligne sans téléchargement. Compatible mobile et ordinateur.">
+  <meta name="keywords" content="calculatrice, calculatrice en ligne, calculatrice gratuite, faire des calculs, addition, soustraction, multiplication, division">
+  <meta name="author" content="Adam Enj">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 120vh;
+      margin: 0;
+      color: rgb(170, 170, 170);
+    }
+
+    .calculator {
+      background-color: #1e1e1e;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+      width: 280px;
+    }
+
+    #display {
+      width: 100%;
+      height: 50px;
+      font-size: 22px;
+      margin-bottom: 15px;
+      text-align: right;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button {
+      padding: 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #fff;
+      color: #000;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .operator {
+      background-color: #a7ff02;
+      color: white;
+    }
+
+    .equal {
+      background-color: #2196f3;
+      color: white;
+      grid-column: span 2;
+    }
+
+    .clear {
+      background-color: #e53935;
+      color: white;
+      grid-column: span 2;
+    }
+
+    .info {
+      margin-top: 30px;
+      max-width: 600px;
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button class="operator" onclick="append('/')">÷</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button class="operator" onclick="append('*')">×</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button class="operator" onclick="append('-')">−</button>
+
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button class="equal" onclick="calculate()">=</button>
+      <button class="operator" onclick="append('+')">+</button>
+
+      <button class="clear" onclick="clearDisplay()">C</button>
+    </div>
+  </div>
+
+  <div class="info">
+    <h2>À propos de cette calculatrice</h2>
+    <p>Cette calculatrice en ligne vous permet d’effectuer des opérations de base comme l’addition, la soustraction, la multiplication et la division, directement depuis votre navigateur. Aucune installation nécessaire.</p>
+
+    <h3>Fonctionnalités :</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li>✔ Interface simple et élégante</li>
+      <li>✔ Entièrement gratuite</li>
+      <li>✔ Compatible avec mobile et ordinateur</li>
+      <li>✔ Rapide et sécurisée</li>
+    </ul>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+
+    function append(value) {
+      display.value += value;
+    }
+
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch {
+        display.value = "Erreur";
+      }
+    }
+
+    function clearDisplay() {
+      display.value = '';
+    }
+  </script>
+
+</body>
+</html>
