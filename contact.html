@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #ffffff;
+        }
+        form {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input, textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+            background: #2c2c2c;
+            color: white;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: gray;
+        }
+        a {
+            color: #bbb;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contactez-nous</h1>
+    <form action="mailto:tonemail@example.com" method="POST" enctype="text/plain">
+        <label>Nom :</label>
+        <input type="text" name="nom" required>
+
+        <label>Email :</label>
+        <input type="email" name="email" required>
+
+        <label>Message :</label>
+        <textarea name="message" rows="5" required></textarea>
+
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <a href="index.html">Retour à l'accueil</a>
+</body>
+</html>
